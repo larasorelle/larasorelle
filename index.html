@@ -123,8 +123,6 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
   }
   .hero-title {
     font-family: var(--serif);
@@ -133,8 +131,6 @@
     line-height: 1.05;
     color: var(--offwhite);
     margin-bottom: 0.4rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
   }
   .hero-title em { font-style: italic; color: var(--gold-lt); }
   .hero-subtitle {
@@ -145,8 +141,6 @@
     color: var(--sage);
     line-height: 1.5;
     margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
   }
   .hero-tagline {
     font-family: var(--sans);
@@ -156,13 +150,9 @@
     line-height: 1.8;
     max-width: 440px;
     margin-bottom: 3rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
   }
   .hero-buttons {
     display: flex; gap: 1rem; flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s 1s forwards;
   }
   .btn-primary {
     display: inline-block;
@@ -196,8 +186,6 @@
     display: flex; align-items: center; justify-content: center;
     padding: 6rem 4rem;
     position: relative; z-index: 2;
-    opacity: 0;
-    animation: fadeIn 1.2s 0.6s forwards;
   }
   .book-mockup {
     position: relative;
@@ -215,8 +203,7 @@
     bottom: 3rem; left: 6rem;
     width: 60px; height: 1px;
     background: var(--gold);
-    opacity: 0;
-    animation: fadeIn 1s 1.2s forwards;
+    opacity: 1;
   }
 
   /* ── SECTION DEFAULTS ── */
@@ -688,18 +675,13 @@
   .footer-links a:hover { color: var(--gold); }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  @keyframes fadeIn {
-    from { opacity: 0; }
     to   { opacity: 1; }
   }
   .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 1;
+    transform: none;
   }
   .reveal.visible {
     opacity: 1;
@@ -913,7 +895,7 @@
 <!-- PULL QUOTE -->
 <section id="quote">
   <div class="section-inner" style="padding-top:7rem;padding-bottom:7rem;">
-    <span class="quote-marks reveal">"</span>
+    
     <p class="big-quote reveal">You do not have to understand it all at once. You only have to be willing to be honest with yourself, one page at a time.</p>
     <p class="big-quote-source reveal">— Author's Note, The Hum Beneath the Peace</p>
   </div>
@@ -1075,35 +1057,29 @@
 </footer>
 
 <script>
+  function handleSignup(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Thank you';
+    btn.style.background = 'var(--sage)';
+    setTimeout(() => {
+      btn.textContent = 'Subscribe';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script><script>
   // Nav scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  // Sections visible by default
 
   // Mobile menu
   function openMobileMenu() {
     document.getElementById('mobileMenu').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-  function closeMobileMenu() {
-    document.getElementById('mobileMenu').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // Email signup handler
-  function handleSignup(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('butto
+  function closeMobi
