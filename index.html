@@ -189,13 +189,16 @@
   }
   .book-mockup {
     position: relative;
-    width: 260px;
-    filter: drop-shadow(-20px 30px 60px rgba(0,0,0,0.5));
+    width: 240px;
+    flex-shrink: 0;
+    filter: drop-shadow(-16px 24px 48px rgba(0,0,0,0.55));
   }
   .book-cover-img {
     width: 100%;
+    height: auto;
     border-radius: 2px;
     display: block;
+    aspect-ratio: 260 / 390;
   }
   /* decorative gold line */
   .hero-line {
@@ -747,6 +750,8 @@
     font-size: 2rem; color: var(--cream); cursor: pointer;
   }
 </style>
+  <!-- www redirect handled by Cloudflare - this ensures consistency -->
+  <link rel="canonical" href="https://larasorelle.com">
 </head>
 <body>
 
@@ -792,29 +797,38 @@
   <div class="hero-right">
     <div class="book-mockup">
       <!-- Book cover represented visually using the cover design colours -->
-      <svg viewBox="0 0 260 390" xmlns="http://www.w3.org/2000/svg" class="book-cover-img">
-        <!-- Background layers like the actual cover -->
+      <svg viewBox="0 0 260 390" xmlns="http://www.w3.org/2000/svg" class="book-cover-img" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block;">
+        <!-- Sky/background bands matching real cover -->
         <rect width="260" height="390" fill="#1e3a2f"/>
-        <rect width="260" height="110" fill="#2d4d3c" y="0"/>
-        <rect width="260" height="90" fill="#3a5e4a" y="80" opacity="0.6"/>
-        <!-- Moon/sun circle -->
-        <circle cx="160" cy="180" r="85" fill="#c9a84c" opacity="0.85"/>
-        <circle cx="160" cy="180" r="18" fill="#faf6f0" opacity="0.9"/>
-        <!-- Dark tree silhouettes -->
-        <polygon points="30,390 55,280 80,390" fill="#122a1f"/>
-        <polygon points="50,390 80,260 110,390" fill="#0e2218"/>
-        <polygon points="170,390 200,270 230,390" fill="#122a1f"/>
-        <polygon points="185,390 210,255 235,390" fill="#0e2218"/>
+        <rect width="260" height="90" fill="#3a6b55" y="0" opacity="0.7"/>
+        <rect width="260" height="60" fill="#4d7a62" y="60" opacity="0.5"/>
+        <!-- Large gold sun/moon circle - centred in upper portion -->
+        <circle cx="158" cy="162" r="88" fill="#c9a84c" opacity="0.88"/>
+        <!-- Small inner white circle -->
+        <circle cx="158" cy="162" r="16" fill="#faf6f0" opacity="0.95"/>
+        <!-- Curved accent lines on circle like real cover -->
+        <path d="M138,130 Q158,122 178,130" fill="none" stroke="#1e3a2f" stroke-width="1.5" opacity="0.3"/>
+        <path d="M130,142 Q158,132 186,142" fill="none" stroke="#1e3a2f" stroke-width="1" opacity="0.2"/>
+        <!-- Dark tree silhouettes left side -->
+        <polygon points="0,390 28,290 56,390" fill="#0d1f17"/>
+        <polygon points="20,390 52,265 84,390" fill="#102518"/>
+        <polygon points="48,390 72,280 96,390" fill="#0d1f17"/>
+        <!-- Dark tree silhouettes right side -->
+        <polygon points="168,390 192,272 216,390" fill="#0d1f17"/>
+        <polygon points="190,390 214,258 238,390" fill="#102518"/>
+        <polygon points="210,390 234,275 260,390" fill="#0d1f17"/>
+        <!-- Horizon ground strip -->
+        <rect width="260" height="18" y="360" fill="#0d1f17" opacity="0.6"/>
         <!-- Gold divider line -->
-        <line x1="20" y1="260" x2="240" y2="260" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
-        <!-- Title text -->
-        <text x="130" y="292" text-anchor="middle" fill="#faf6f0" font-family="Georgia, serif" font-size="22" font-weight="700" letter-spacing="0.5">The Hum</text>
-        <text x="130" y="318" text-anchor="middle" fill="#faf6f0" font-family="Georgia, serif" font-size="22" font-weight="700" letter-spacing="0.5">Beneath the Peace</text>
-        <!-- Subtitle -->
-        <text x="130" y="338" text-anchor="middle" fill="#c9a84c" font-family="Georgia, serif" font-size="9" font-style="italic">How to Stop Carrying What Was Never Yours</text>
-        <text x="130" y="350" text-anchor="middle" fill="#c9a84c" font-family="Georgia, serif" font-size="9" font-style="italic">and Come Home to Yourself</text>
-        <!-- Author -->
-        <text x="130" y="375" text-anchor="middle" fill="rgba(240,232,213,0.7)" font-family="Georgia, serif" font-size="11" letter-spacing="1">Lara Sorelle</text>
+        <line x1="16" y1="268" x2="244" y2="268" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/>
+        <!-- Title -->
+        <text x="130" y="295" text-anchor="middle" fill="#faf6f0" font-family="Georgia, serif" font-size="20" font-weight="700">The Hum</text>
+        <text x="130" y="318" text-anchor="middle" fill="#faf6f0" font-family="Georgia, serif" font-size="20" font-weight="700">Beneath the Peace</text>
+        <!-- Subtitle italic -->
+        <text x="130" y="336" text-anchor="middle" fill="#c9a84c" font-family="Georgia, serif" font-size="8" font-style="italic">How to Stop Carrying What Was Never Yours</text>
+        <text x="130" y="347" text-anchor="middle" fill="#c9a84c" font-family="Georgia, serif" font-size="8" font-style="italic">and Come Home to Yourself</text>
+        <!-- Author name -->
+        <text x="130" y="372" text-anchor="middle" fill="rgba(240,232,213,0.75)" font-family="Georgia, serif" font-size="10" letter-spacing="1.5">Lara Sorelle</text>
       </svg>
     </div>
   </div>
@@ -1020,11 +1034,13 @@
     <h2 class="section-title reveal">Words worth <em>keeping.</em></h2>
     <div class="gold-rule reveal"></div>
     <p class="signup-desc reveal">Join the reader community for writing on emotional clarity, quiet courage, and coming home to yourself. No noise. No pressure. Just honest words, occasionally.</p>
-    <form class="signup-form reveal" onsubmit="handleSignup(event)">
-      <input type="email" placeholder="Your email address" required aria-label="Email address">
+    <form class="signup-form reveal" onsubmit="handleSignup(event)" id="mc-form">
+      <input type="email" placeholder="Your email address" required aria-label="Email address" id="mc-email">
       <button type="submit">Subscribe</button>
     </form>
+    <p id="signup-msg" style="font-size:0.85rem;color:var(--gold-lt);min-height:1.2em;margin-top:0.8rem;font-style:italic;"></p>
     <p class="signup-small reveal">No spam. Unsubscribe at any time.</p>
+    <p class="signup-small reveal" style="margin-top:0.5rem;">To receive updates by email, please also send a quick note to <a href="mailto:hello@larasorelle.com" style="color:var(--gold-lt);">hello@larasorelle.com</a> with the subject line <em>Subscribe</em> — we will add you to the list.</p>
   </div>
 </section>
 
@@ -1059,27 +1075,22 @@
 <script>
   function handleSignup(e) {
     e.preventDefault();
+    const email = document.getElementById('mc-email').value;
+    const msg = document.getElementById('signup-msg');
     const btn = e.target.querySelector('button');
-    btn.textContent = 'Thank you';
+    btn.textContent = 'Received';
     btn.style.background = 'var(--sage)';
+    msg.textContent = 'Thank you — please also send a quick email to hello@larasorelle.com with the subject Subscribe to confirm your place on the list.';
     setTimeout(() => {
       btn.textContent = 'Subscribe';
       btn.style.background = '';
       e.target.reset();
-    }, 3000);
+    }, 6000);
   }
-</script><script>
+</script>
+
+<script>
   // Nav scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // Sections visible by default
-
-  // Mobile menu
-  function openMobileMenu() {
-    document.getElementById('mobileMenu').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobi
+    navbar.classList.toggle('scrolled
