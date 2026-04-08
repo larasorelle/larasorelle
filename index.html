@@ -832,7 +832,7 @@
     <p class="hero-subtitle">How to Stop Carrying What Was Never Yours<br>and Come Home to Yourself</p>
     <p class="hero-tagline">For the woman who still shows up, still functions, still holds everything together. The woman who lives with a low hum underneath that she cannot name.</p>
     <div class="hero-buttons">
-      <a href="#buy" class="btn-primary">Get the Book</a>
+      <a href="https://www.amazon.co.uk/dp/106768770X" target="_blank" rel="noopener" class="btn-primary">Get the Book</a>
       <a href="#about-book" class="btn-secondary">Learn More</a>
     </div>
   </div>
@@ -998,7 +998,7 @@
           <li>5 diagnostic worksheets to begin from honesty</li>
         </ul>
         <p style="font-size:0.9rem;font-style:italic;color:var(--text-lt);margin-bottom:1.5rem;">"You do not need perfect healing in order to protect your peace. You only need enough honesty to keep choosing what steadies you."</p>
-        <a href="#buy" class="btn-primary">Get the Journal</a>
+        <a href="https://www.amazon.co.uk/dp/106768770X" target="_blank" rel="noopener" class="btn-primary">Get the Journal</a>
       </div>
     </div>
   </div>
@@ -1007,19 +1007,17 @@
 <!-- BUY -->
 <section id="buy">
   <div class="section-inner" style="padding-top:6rem;padding-bottom:6rem;">
-    <p class="section-label reveal">Coming Soon</p>
+    <p class="section-label reveal">Available Now</p>
     <h2 class="section-title reveal">Get Your Copy</h2>
     <div class="gold-rule reveal"></div>
     <div class="countdown-wrap">
-      <p class="countdown-label">Book launches in</p>
-      <div class="countdown-boxes" id="countdown-boxes">
-        <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-unit">Days</span></div>
-        <div class="countdown-box"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-unit">Hours</span></div>
-        <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-unit">Minutes</span></div>
-        <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-unit">Seconds</span></div>
+      <p class="countdown-label" style="color:var(--gold-lt);">The book is live</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+        <a href="https://www.amazon.co.uk/dp/106768770X" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);background:var(--gold);padding:0.9rem 2rem;text-decoration:none;">Buy on Amazon UK</a>
+        <a href="https://www.amazon.com/dp/106768770X" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:0.9rem 2rem;text-decoration:none;">Buy on Amazon US</a>
       </div>
     </div>
-    <p class="buy-intro reveal">The book is coming soon. Add your email below to be notified the moment it goes live on Amazon and other retailers.</p>
+    <p class="buy-intro reveal">The Hum Beneath the Peace is available now on Amazon in paperback and Kindle. Order your copy today.</p>
     <div class="buy-cards reveal">
       <div class="buy-card">
         <p class="buy-card-label">The Main Book</p>
@@ -1172,7 +1170,7 @@
   // Email signup handler
   function handleSignup(e) { e.preventDefault(); }
 
-  var launchDate = new Date('2026-04-17T00:00:00').getTime();
+  var launchDate = new Date('2026-04-01T00:00:00').getTime();
   function updateCountdown() {
     var now = new Date().getTime();
     var diff = launchDate - now;
