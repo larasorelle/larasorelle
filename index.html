@@ -372,14 +372,17 @@
   }
   .journal-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
     align-items: start;
+    overflow: hidden;
   }
   .journal-img-wrap {
-    width:220px;
-    flex-shrink:0;
-    position:relative;
+    width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
   .journal-mockup {
     width: 220px;
@@ -951,7 +954,7 @@
       <div class="journal-img-wrap reveal">
         <div class="journal-tag">Companion Journal</div>
         <!-- Journal cover SVG matching the actual design -->
-        <svg viewBox="0 0 220 310" xmlns="http://www.w3.org/2000/svg" class="journal-mockup">
+        <svg viewBox="0 0 220 310" xmlns="http://www.w3.org/2000/svg" class="journal-mockup" style="width:100%;max-width:220px;height:auto;display:block;">
           <rect width="220" height="310" fill="#f0e8d5"/>
           <rect width="220" height="80" fill="#e8dfc8" y="0"/>
           <rect width="220" height="80" fill="#d4c9a8" y="230" opacity="0.5"/>
@@ -994,7 +997,7 @@
 <!-- BUY -->
 <section id="buy">
   <div class="section-inner" style="padding-top:6rem;padding-bottom:6rem;">
-    <p class="section-label reveal">Available Now</p>
+    <p class="section-label reveal">Coming Soon</p>
     <h2 class="section-title reveal">Get Your Copy</h2>
     <div class="gold-rule reveal"></div>
     <div class="countdown-wrap">
@@ -1006,7 +1009,7 @@
         <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-unit">Seconds</span></div>
       </div>
     </div>
-    <p class="buy-intro reveal">Both titles are available from major retailers. Choose your preferred format below.</p>
+    <p class="buy-intro reveal">The book is coming soon. Add your email below to be notified the moment it goes live on Amazon and other retailers.</p>
     <div class="buy-cards reveal">
       <div class="buy-card">
         <p class="buy-card-label">The Main Book</p>
