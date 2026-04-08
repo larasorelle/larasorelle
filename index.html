@@ -1192,7 +1192,12 @@
     var secs = Math.floor((diff % 60000) / 1000);
     document.getElementById('cd-days').textContent = days;
     document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
-    docume
+    document.getElementById('cd-mins').textContent = mins < 10 ? '0' + mins : mins;
+    document.getElementById('cd-secs').textContent = secs < 10 ? '0' + secs : secs;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
