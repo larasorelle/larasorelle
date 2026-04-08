@@ -103,6 +103,11 @@ section{padding:6rem 2rem;}
 .signup-small{font-family:var(--sans);font-size:0.75rem;color:#6b8c6e;margin-top:1rem;}
 
 .author-section{background:var(--forest);}
+  .author-inner{display:flex;align-items:center;gap:4rem;}
+  .author-portrait{flex-shrink:0;width:220px;}
+  .author-svg{width:100%;height:auto;filter:drop-shadow(-8px 12px 32px rgba(0,0,0,0.4));}
+  .author-text{flex:1;}
+  @media(max-width:700px){.author-inner{flex-direction:column;gap:2rem;}.author-portrait{width:160px;margin:0 auto;}}
 .author-body{font-family:var(--sans);font-size:0.92rem;line-height:1.9;color:rgba(240,232,213,0.8);max-width:600px;}
 
 .contact-section{background:#f5efe6;padding:5rem 2rem;text-align:center;}
@@ -291,7 +296,9 @@ footer{background:var(--dark);padding:2rem;text-align:center;}
   <div class="signup-inner">
     <p class="section-label" style="text-align:center;">Stay Connected</p>
     <h2 class="signup-title">Join the Reader List</h2>
-    <p class="signup-body">Be the first to know when the book and journal go live. Occasional letters on emotional clarity, boundaries and the quiet return to self.</p>
+    <p class="signup-body">If something in this book has already found you, you are in the right place.</p>
+    <p class="signup-body" style="margin-top:1rem;">Join the reader list for updates on the book and journal, quiet letters on emotional clarity, and occasional words for the woman who is still doing the work.</p>
+    <p class="signup-body" style="margin-top:1rem;font-style:italic;color:var(--sage);">No noise. No performance. Just honest writing, when it is ready.</p>
     <a href="http://eepurl.com/jDvSf6" target="_blank" rel="noopener" class="signup-btn">Join the List</a>
     <p class="signup-small">No spam. Unsubscribe at any time.</p>
   </div>
@@ -299,10 +306,57 @@ footer{background:var(--dark);padding:2rem;text-align:center;}
 
 <section class="author-section" id="author">
   <div class="section-inner">
-    <p class="section-label">About the Author</p>
-    <h2 class="section-title" style="color:var(--cream);">Lara Sorelle</h2>
-    <div class="gold-rule"></div>
-    <p class="author-body">Lara Sorelle is a writer whose work explores emotional clarity, boundaries and the quiet return to self. Her writing sits in the space between self-knowledge and self-compassion. She writes for the woman who is already doing the work and simply needs language for what she is carrying.</p>
+    <div class="author-inner">
+      <div class="author-portrait">
+        <svg viewBox="0 0 280 340" xmlns="http://www.w3.org/2000/svg" class="author-svg">
+          <!-- Background circle -->
+          <circle cx="140" cy="140" r="130" fill="#2d5a3d" opacity="0.5"/>
+          <!-- Gold outer ring -->
+          <circle cx="140" cy="140" r="118" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+          <!-- Silhouette base - shoulders -->
+          <ellipse cx="140" cy="290" rx="90" ry="60" fill="#1a3328"/>
+          <!-- Neck -->
+          <rect x="124" y="205" width="32" height="45" rx="10" fill="#c9a98a"/>
+          <!-- Head shape -->
+          <ellipse cx="140" cy="175" rx="52" ry="60" fill="#c9a98a"/>
+          <!-- Hair - natural updo/natural style -->
+          <ellipse cx="140" cy="130" rx="54" ry="42" fill="#2a1a0e"/>
+          <ellipse cx="140" cy="118" rx="50" ry="30" fill="#3a2510"/>
+          <ellipse cx="100" cy="148" rx="20" ry="35" fill="#2a1a0e"/>
+          <ellipse cx="180" cy="148" rx="20" ry="35" fill="#2a1a0e"/>
+          <!-- Face features - peaceful expression -->
+          <!-- Eyes -->
+          <ellipse cx="122" cy="175" rx="7" ry="5" fill="#1a0e05"/>
+          <ellipse cx="158" cy="175" rx="7" ry="5" fill="#1a0e05"/>
+          <!-- Eye shine -->
+          <circle cx="125" cy="173" r="2" fill="white" opacity="0.6"/>
+          <circle cx="161" cy="173" r="2" fill="white" opacity="0.6"/>
+          <!-- Nose -->
+          <path d="M137 185 Q140 192 143 185" fill="none" stroke="#a07850" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Gentle smile -->
+          <path d="M128 198 Q140 207 152 198" fill="none" stroke="#8a5a3a" stroke-width="2" stroke-linecap="round"/>
+          <!-- Clothing - simple elegant neckline -->
+          <path d="M60 310 Q90 245 124 230 Q140 240 156 230 Q190 245 220 310 Z" fill="#1e3a2f"/>
+          <!-- Subtle necklace -->
+          <path d="M122 235 Q140 248 158 235" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.7"/>
+          <circle cx="140" cy="249" r="3" fill="#c9a84c" opacity="0.7"/>
+          <!-- Gold accent bottom -->
+          <line x1="30" y1="328" x2="250" y2="328" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+          <!-- Name underneath -->
+          <text x="140" y="345" text-anchor="middle" fill="rgba(240,232,213,0.6)" font-family="Georgia,serif" font-size="13" font-style="italic" letter-spacing="1">Lara Sorelle</text>
+        </svg>
+      </div>
+      <div class="author-text">
+        <p class="section-label">About the Author</p>
+        <h2 class="section-title" style="color:var(--cream);">Lara Sorelle</h2>
+        <div class="gold-rule"></div>
+        <p class="author-body">Lara Sorelle is a writer whose work explores emotional clarity, boundaries and the quiet return to self.</p>
+        <br>
+        <p class="author-body">Her writing sits in the space between self-knowledge and self-compassion. She writes for the woman who is already doing the work and simply needs language for what she is carrying.</p>
+        <br>
+        <p class="author-body">The Hum Beneath the Peace is her first book. The companion journal, Resolved, follows later in 2026.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -351,7 +405,7 @@ footer{background:var(--dark);padding:2rem;text-align:center;}
     document.getElementById('mobileMenu').classList.remove('open');
     document.body.style.overflow = '';
   }
-  var launchDate = new Date('2026-04-10T00:00:00').getTime();
+  var launchDate = new Date('2026-04-17T00:00:00').getTime();
   function updateCountdown() {
     var diff = launchDate - Date.now();
     if (diff <= 0) {
