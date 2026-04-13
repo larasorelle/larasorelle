@@ -124,7 +124,7 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1.8rem;
-    opacity: 0;
+    opacity: 1;
     animation: fadeUp 0.8s 0.2s forwards;
   }
   .hero-title {
@@ -134,7 +134,7 @@
     line-height: 1.05;
     color: var(--offwhite);
     margin-bottom: 0.4rem;
-    opacity: 0;
+    opacity: 1;
     animation: fadeUp 0.8s 0.4s forwards;
   }
   .hero-title em { font-style: italic; color: var(--gold-lt); }
@@ -146,7 +146,7 @@
     color: var(--sage);
     line-height: 1.5;
     margin-bottom: 2.5rem;
-    opacity: 0;
+    opacity: 1;
     animation: fadeUp 0.8s 0.6s forwards;
   }
   .hero-tagline {
@@ -157,12 +157,12 @@
     line-height: 1.8;
     max-width: 440px;
     margin-bottom: 3rem;
-    opacity: 0;
+    opacity: 1;
     animation: fadeUp 0.8s 0.8s forwards;
   }
   .hero-buttons {
     display: flex; gap: 1rem; flex-wrap: wrap;
-    opacity: 0;
+    opacity: 1;
     animation: fadeUp 0.8s 1s forwards;
   }
   .btn-primary {
@@ -197,7 +197,7 @@
     display: flex; align-items: center; justify-content: center;
     padding: 6rem 4rem;
     position: relative; z-index: 2;
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 1.2s 0.6s forwards;
   }
   .book-mockup {
@@ -216,7 +216,7 @@
     bottom: 3rem; left: 6rem;
     width: 60px; height: 1px;
     background: var(--gold);
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 1s 1.2s forwards;
   }
 
@@ -717,8 +717,8 @@
     to   { opacity: 1; }
   }
   .reveal {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.visible {
@@ -784,14 +784,12 @@
     background: none; border: none;
     font-size: 2rem; color: var(--cream); cursor: pointer;
   }
-
-  .countdown-wrap{margin:0 auto 2.5rem;text-align:center;}
-  .countdown-label{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-  .countdown-boxes{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
-  .countdown-box{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.3);padding:1rem 1.4rem;min-width:70px;}
-  .countdown-num{font-family:var(--serif);font-size:2.4rem;font-weight:300;color:var(--cream);line-height:1;display:block;}
-  .countdown-unit{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(107,140,110,0.9);margin-top:4px;display:block;}
-  .countdown-live{font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--gold-lt);}
+  #buy a { color: #faf6f0 !important; text-decoration: none !important; }
+  #buy a:hover { color: #c9a84c !important; }
+  #buy a:visited { color: #faf6f0 !important; }
+  .retailer-item a { color: #faf6f0 !important; text-decoration: none !important; border-bottom: 1px solid rgba(201,168,76,0.4); padding-bottom: 1px; }
+  .retailer-item a:hover { color: #c9a84c !important; border-bottom-color: #c9a84c; }
+  .retailer-item a:visited { color: #faf6f0 !important; }
 </style>
 </head>
 <body>
@@ -802,7 +800,6 @@
   <a href="#about-book" onclick="closeMobileMenu()">The Book</a>
   <a href="#chapters" onclick="closeMobileMenu()">Chapters</a>
   <a href="#journal" onclick="closeMobileMenu()">The Journal</a>
-  <a href="#event" onclick="closeMobileMenu()" style="color:var(--gold);">Launch Event</a>
   <a href="#buy" onclick="closeMobileMenu()">Buy Now</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
 </div>
@@ -867,15 +864,7 @@
   </div>
   <div class="hero-line"></div>
 </section>
-<!-- LAUNCH EVENT BANNER -->
-<section id="event" style="background:var(--gold);padding:2.5rem 2rem;text-align:center;">
-  <div style="max-width:800px;margin:0 auto;">
-    <p style="font-family:var(--sans);font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--forest);margin-bottom:0.5rem;opacity:0.8;">Free Online Event</p>
-    <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:var(--forest);font-weight:400;margin-bottom:0.5rem;">Book Launch and Reading</h2>
-    <p style="font-family:var(--sans);font-size:0.9rem;color:var(--forest);opacity:0.85;margin-bottom:1.2rem;">Saturday 11th April 2026 at 4pm UK time &middot; 40 minutes &middot; Free via Zoom</p>
-    <a href="https://www.eventbrite.co.uk/e/1986958641785?aff=oddtdtcreator" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);background:var(--forest);padding:0.9rem 2.2rem;text-decoration:none;transition:background 0.2s;">Register Free</a>
-  </div>
-</section>
+
 
 <!-- ABOUT THE BOOK -->
 <section id="about-book">
@@ -1010,84 +999,31 @@
     <p class="section-label reveal">Available Now</p>
     <h2 class="section-title reveal">Get Your Copy</h2>
     <div class="gold-rule reveal"></div>
-    <div class="countdown-wrap">
-      <p class="countdown-label" style="color:var(--gold-lt);">The book is live</p>
-      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
-        <a href="https://www.amazon.co.uk/dp/106768770X" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--forest);background:var(--gold);padding:0.9rem 2rem;text-decoration:none;">Buy on Amazon UK</a>
-        <a href="https://www.amazon.com/dp/106768770X" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:0.9rem 2rem;text-decoration:none;">Buy on Amazon US</a>
-      </div>
-    </div>
-    <p class="buy-intro reveal">The Hum Beneath the Peace is available now on Amazon in paperback and Kindle. Order your copy today.</p>
+    
+    <p class="buy-intro reveal">Both titles are available now. Order your copy or bundle on Amazon and Etsy.</p>
     <div class="buy-cards reveal">
       <div class="buy-card">
         <p class="buy-card-label">The Main Book</p>
         <h3 class="buy-card-title">The Hum Beneath the Peace</h3>
-        <p class="buy-card-sub">How to Stop Carrying What Was Never Yours</p>
+        <p class="buy-card-sub">How to Stop Carrying What Was Never Yours and Come Home to Yourself</p>
         <div class="buy-retailers">
-          <a href="YOUR_AMAZON_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Amazon <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_BARNES_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Barnes &amp; Noble <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_BOOKSHOP_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Bookshop.org <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_OTHER_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Other Retailers <span class="retailer-arrow">→</span>
-          </a>
+          <span class="retailer-item"><a href="https://www.amazon.co.uk/dp/106768770X" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Paperback and Kindle on Amazon UK</a></span>
+          <span class="retailer-item"><a href="https://www.amazon.com/dp/106768770X" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Paperback and Kindle on Amazon US</a></span>
+          <span class="retailer-item"><a href="https://www.etsy.com/shop/LarasorelleShop" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Signed Copy on Etsy</a></span>
+          <span class="retailer-item"><a href="https://www.goodreads.com/book/show/250775719-the-hum-beneath-the-peace" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Add on Goodreads</a></span>
         </div>
+        <p class="buy-note">Available now</p>
       </div>
-      <div class="buy-card" style="opacity:0.8;position:relative;">
-        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--forest);font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:4px 14px;white-space:nowrap;">Coming Soon</div>
+      <div class="buy-card">
         <p class="buy-card-label">The Companion Journal</p>
         <h3 class="buy-card-title">Resolved</h3>
         <p class="buy-card-sub">A 90-Day Emotional Clarity Journal</p>
         <div class="buy-retailers">
-          <a href="YOUR_JOURNAL_AMAZON_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Amazon <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_JOURNAL_BARNES_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Barnes &amp; Noble <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_JOURNAL_BOOKSHOP_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Bookshop.org <span class="retailer-arrow">→</span>
-          </a>
-          <a href="YOUR_JOURNAL_OTHER_LINK" class="retailer-link" target="_blank" rel="noopener">
-            Other Retailers <span class="retailer-arrow">→</span>
-          </a>
+          <span class="retailer-item"><a href="https://www.amazon.co.uk/dp/B0GWRVRXJH" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Paperback on Amazon UK</a></span>
+          <span class="retailer-item"><a href="https://www.etsy.com/shop/LarasorelleShop" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Order on Etsy</a></span>
+          <span class="retailer-item"><a href="https://www.goodreads.com/book/show/250896094-resolved" target="_blank" rel="noopener" style="color:#faf6f0;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Add on Goodreads</a></span>
         </div>
-      </div>
-    </div>
-    <p class="buy-note reveal">Read the book. Use the journal. Do the work.</p>
-  </div>
-</section>
-
-<!-- ABOUT AUTHOR -->
-<section id="about-author">
-  <div class="section-inner" style="padding-top:7rem;padding-bottom:7rem;">
-    <div class="author-grid">
-      <div class="author-text reveal">
-        <p class="section-label">About the Author</p>
-        <h2 class="section-title">Lara <em>Sorelle</em></h2>
-        <div class="gold-rule"></div>
-        <p>Lara Sorelle is a writer whose work explores emotional clarity, boundaries, and the quiet return to self. Her writing is grounded in the belief that honest language is one of the most powerful tools a woman can use to reclaim her inner life.</p>
-        <p><em>The Hum Beneath the Peace</em> was written for every woman who has ever known something was wrong before she had the words to say what. It is a book that does not rush to resolution : it trusts the reader to sit with truth long enough for it to become useful.</p>
-        <p>The companion journal, <em>Resolved</em>, was created because understanding is only the beginning. The daily practice of honest writing is where change takes root.</p>
-      </div>
-      <div class="author-values reveal">
-        <div class="author-value">
-          <h4>Honest. Not harsh.</h4>
-          <p>Writing that tells the truth without weaponising it. Clarity that serves healing, not self-punishment.</p>
-        </div>
-        <div class="author-value">
-          <h4>Grounded in experience.</h4>
-          <p>Every chapter is anchored in emotional reality : the kind that is easy to live and difficult to name.</p>
-        </div>
-        <div class="author-value">
-          <h4>Written for the woman who already knows.</h4>
-          <p>You don't need to be convinced something is wrong. You need language for what you already feel.</p>
-        </div>
+        <p class="buy-note">Available now</p>
       </div>
     </div>
   </div>
@@ -1139,25 +1075,10 @@
 </footer>
 
 <script>
-  // Nav scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Mobile menu
   function openMobileMenu() {
     document.getElementById('mobileMenu').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1166,33 +1087,7 @@
     document.getElementById('mobileMenu').classList.remove('open');
     document.body.style.overflow = '';
   }
-
-  // Email signup handler
   function handleSignup(e) { e.preventDefault(); }
-
-  var launchDate = new Date('2026-04-01T00:00:00').getTime();
-  function updateCountdown() {
-    var now = new Date().getTime();
-    var diff = launchDate - now;
-    var boxes = document.getElementById('countdown-boxes');
-    if (!boxes) return;
-    if (diff <= 0) {
-      boxes.innerHTML = '<span class="countdown-live">The book is live. Get your copy now.</span>';
-      var lbl = document.querySelector('.countdown-label');
-      if (lbl) lbl.style.display = 'none';
-      return;
-    }
-    var days = Math.floor(diff / 86400000);
-    var hours = Math.floor((diff % 86400000) / 3600000);
-    var mins = Math.floor((diff % 3600000) / 60000);
-    var secs = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-days').textContent = days;
-    document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
-    document.getElementById('cd-mins').textContent = mins < 10 ? '0' + mins : mins;
-    document.getElementById('cd-secs').textContent = secs < 10 ? '0' + secs : secs;
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 </script>
 
 </body>
