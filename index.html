@@ -1036,7 +1036,7 @@
     <p class="section-label reveal">Stay Connected</p>
     <h2 class="section-title reveal">Words worth <em>keeping.</em></h2>
     <div class="gold-rule reveal"></div>
-    <p class="signup-desc reveal">Join the reader community for writing on emotional clarity, quiet courage, and coming home to yourself. No noise. No pressure. Just honest words, occasionally.</p>
+    <p class="signup-desc reveal">Join the reader list for occasional writing on emotional clarity, boundaries and the quiet return to self. You can unsubscribe at any time. Your email address will be held securely and never shared with third parties.</p>
     <a href="http://eepurl.com/jDvSf6" target="_blank" rel="noopener" class="cta-btn reveal" style="margin-top:1.5rem;">Join the List</a>
     <p class="signup-small reveal">No spam. Unsubscribe at any time.</p>
   </div>
@@ -1073,6 +1073,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <span class="footer-copy">© 2026 Lara Sorelle. All rights reserved.</span>
+  <span class="footer-copy" style="margin-top:0.5rem;"><a href="/privacy" style="color:rgba(240,232,213,0.35);text-decoration:none;border-bottom:1px solid rgba(240,232,213,0.2);">Privacy Policy</a></span>
 </footer>
 
 <script>
@@ -1089,7 +1090,32 @@
     document.body.style.overflow = '';
   }
   function handleSignup(e) { e.preventDefault(); }
+
+  function acceptCookies() {
+    var banner = document.getElementById('cookie-banner');
+    if (banner) banner.style.display = 'none';
+    try { localStorage.setItem('cookies-accepted', '1'); } catch(e) {}
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var banner = document.getElementById('cookie-banner');
+    if (banner) {
+      try {
+        if (!localStorage.getItem('cookies-accepted')) {
+          banner.style.display = 'flex';
+        }
+      } catch(e) {
+        banner.style.display = 'flex';
+      }
+    }
+  });
 </script>
+
+
+<!-- COOKIE NOTICE -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#0d1f17;border-top:1px solid rgba(201,168,76,0.3);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;color:rgba(240,232,213,0.75);margin:0;max-width:700px;">This website uses cookies to understand how visitors use the site. By continuing to browse you agree to our use of cookies. <a href="/privacy" style="color:#c9a84c;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);">Read our Privacy Policy.</a></p>
+  <button onclick="acceptCookies()" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#1e3a2f;background:#c9a84c;border:none;padding:0.7rem 1.5rem;cursor:pointer;white-space:nowrap;">Accept</button>
+</div>
 
 </body>
 </html>
